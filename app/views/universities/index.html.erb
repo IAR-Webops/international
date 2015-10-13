@@ -1,1 +1,7 @@
-Hi. This is the index page of this site.
+<% content_for :title do%>
+  Home
+<% end %>
+
+<% @universities.each do |university| %>
+    <%= render university %>
+<% end %>

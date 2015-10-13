@@ -1,0 +1,19 @@
+<div class="university_div <%=university.id%>"> 
+
+    <div class="university_name">
+        <%= link_to university.name.capitalize, university_path(id: university.id) %>
+    </div>
+
+    <div class="university_info">
+        <%= raw university.info %>
+    </div>
+    <br>
+
+    <div class="departments_container">Departments:<% @departments = University.includes(:departments).find(university.id).departments %>
+        <% @departments.each do |department| %>
+            <%= department.name.capitalize %>
+        <% end %>
+    </div>
+    <br>
+
+</div>
