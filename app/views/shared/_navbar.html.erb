@@ -3,8 +3,8 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <%= link_to(root_path) do %>
-            <b class="navbar-brand">International Portal</b>
-    <% end %>
+                <b class="navbar-brand">International Portal</b>
+        <% end %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggdivng -->
@@ -15,19 +15,19 @@
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li class="navbar_link"><%= link_to "Add new University",new_university_path %></li>
-                <%# if signed_in? %>
+                <li class="navbar_link"><%= link_to "Add new University", new_university_path %></li>
+                <% if user_signed_in? %>
                     <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li class="navbar_link"><a href="#">Profile*</a></li>
-                    <li class="divider"></li>
-                    <li class="navbar_link"><%= link_to "Sign Out", root_path %></li>
+                    <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                    <li><%= link_to 'Sign Out', destroy_user_session_path %></li>
                 </ul>
                 </li>
-            <%# else %>
-                <li class="navbar_link"><a data-toggle="modal" data-target="#signin_modal" href="#">Sign In</a></li>
-            <%# end %>
+            <% else %>
+                <!---<li class="navbar_link"><%= link_to "Sign Up", new_user_registration_path %></li>--!>
+                <li class="navbar_link"><%= link_to "Sign In", new_user_session_path %></li>
+            <% end %>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

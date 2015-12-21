@@ -18,11 +18,11 @@
 
 <div class="main container-fluid">
 
-    <div class="main-sub container-fluid">
-
         <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
+
+    <div class="main-sub container-fluid">
 
         <%= yield %>
 
