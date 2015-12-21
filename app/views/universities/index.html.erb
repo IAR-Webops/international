@@ -1,7 +1,11 @@
 <% content_for :title do%>
-  Home
+    Home
 <% end %>
 
-<% @universities.each do |university| %>
-    <%= render university %>
+<%= render 'shared/sidebar' %>
+
+<div class="university_list">
+    <% @universities.each do |university| %>
+        <%= render university %>
 <% end %>
+</div>

@@ -11,7 +11,7 @@
             <div class="span6 offset3">
                 <%= form_for(:university, url: universities_path, method: 'post' , :html => { :class => "form-horizontal"}) do |f| %>
 
-                <%= f.label :university_name%><br>
+                    <%= f.label :university_name%><br>
                 <%= f.text_field :name , class:"form-control", placeholder:"Name" %><br><br>
 
                 <%= f.label :country%><br>
@@ -30,10 +30,15 @@
                     <span>
                         <%= dept.name.capitalize %> &nbsp
                     </span>
-                    </label>
-                <% end %>
-                <br>
-                <br>
+                </label>
+            <% end %>
+                <br><br>
+
+                <%= f.label :from_date %><br>
+                <%= f.date_select :from_date, class:"form-control" %><br><br>
+
+                <%= f.label :to_date %><br>
+                <%= f.date_select :to_date, class:"form-control" %><br><br>
 
                 <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
             <% end %>
