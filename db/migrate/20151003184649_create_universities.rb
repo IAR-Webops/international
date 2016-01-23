@@ -5,8 +5,6 @@ class CreateUniversities < ActiveRecord::Migration
       t.belongs_to :country
       t.string :website
       t.text :info
-      t.date :from_date
-      t.date :to_date
 
       t.timestamps null: false
     end

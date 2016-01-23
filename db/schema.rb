@@ -34,11 +34,12 @@ ActiveRecord::Schema.define(version: 20151221132619) do
   add_index "departments_universities", ["university_id"], name: "index_departments_universities_on_university_id", using: :btree
 
   create_table "durations", force: :cascade do |t|
-    t.date     "to_date",    null: false
-    t.date     "from_date",  null: false
+    t.integer  "university_id", limit: 4, null: false
+    t.date     "to_date",                 null: false
+    t.date     "from_date",               null: false
     t.date     "deadline"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "universities", force: :cascade do |t|
@@ -46,8 +47,6 @@ ActiveRecord::Schema.define(version: 20151221132619) do
     t.integer  "country_id", limit: 4
     t.string   "website",    limit: 255
     t.text     "info",       limit: 65535
-    t.date     "from_date"
-    t.date     "to_date"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

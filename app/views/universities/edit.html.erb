@@ -11,7 +11,7 @@
             <div class="span6 offset3">
                 <%= form_for(:university, url: {action: "update", id: @university.id}, method: "put", :html => { :class => "form-horizontal"}) do |f| %>
 
-                <%= f.label :university_name%><br>
+                    <%= f.label :university_name%><br>
                 <%= f.text_field :name , class:"form-control", value: @university.name %><br><br>
 
                 <%= f.label :country%><br>
@@ -25,15 +25,24 @@
 
                 <%= f.label :departments, "Departments" %><br>
                 <% for dept in Department.all %>
-<label>
+                    <label>
                     <%= check_box_tag "university[department_ids][]", dept.id, @university.departments.include?(dept) %>
-          <span>
-            <%= dept.name.capitalize %> &nbsp
-          </span>
-          </label>
-      <% end %>
-                <br>
-                </br>
+                    <span>
+                        <%= dept.name.capitalize %> &nbsp
+                    </span>
+                </label>
+            <% end %>
+                <br></br>
+
+                <div class="durations_div">
+                <% @durations.each do |duration| %>
+                    <%= render duration %>
+                <% end %>
+                </div>
+
+                <%= link_to "Add Duration", new_university_duration_path(university_id: @university.id), remote: true, class: "btn btn-success add_duration_button"%><br><br>
+
+                <div class="new_duration_div"></div>
 
                 <%= f.submit "Update", class: "btn btn-large btn-primary" %>
             <% end %>

@@ -1,0 +1,17 @@
+<div class="duration_form">
+    <%= form_for(:duration, url: university_durations_path, remote: true, method: 'post', html: {class: 'form-horizontal'}) do |f| %>
+
+        <%= f.label :duration_from %><br>
+    <%= f.date_field :from, class: "form-control" %><br><br>
+
+    <%= f.label :duration_to %><br>
+    <%= f.date_field :to, class: "form-control" %><br><br>
+
+    <%= f.label :application_deadline %><br>
+    <%= f.date_field :deadline, class: "form-control" %><br><br>
+
+    <%= hidden_field_tag(:university_id, "#{params[:university_id]}")%>
+
+    <%= f.submit "Confirm Duration", class: "btn btn-primary" %><br><br>
+<% end %>
+</div>

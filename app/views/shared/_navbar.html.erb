@@ -9,11 +9,13 @@
 
         <!-- Collect the nav links, forms, and other content for toggdivng -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
             </form>
+--!>
             <ul class="nav navbar-nav navbar-right">
                 <li class="navbar_link"><%= link_to "Add new University", new_university_path %></li>
                 <% if user_signed_in? %>
@@ -25,8 +27,8 @@
                 </ul>
                 </li>
             <% else %>
-                <!---<li class="navbar_link"><%= link_to "Sign Up", new_user_registration_path %></li>--!>
-                <li class="navbar_link"><%= link_to "Sign In", new_user_session_path %></li>
+                <!---<li class="navbar_link"><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li class="navbar_link"><%= link_to "Sign In", new_user_session_path %></li>--!>
             <% end %>
             </ul>
         </div><!-- /.navbar-collapse -->

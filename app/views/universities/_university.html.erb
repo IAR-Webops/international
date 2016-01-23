@@ -14,10 +14,10 @@
             <%= department.name.capitalize %>
         <% end %>
     </div>
-    <div class="extras_container">
-        <%= link_to "Edit", edit_university_path(id: university.id)  %>
-        <%= link_to "delete", university, method: :delete, data: {confirm: "Are you sure you want to delete this university?"}, remote: true  %>
-        <%= link_to "Archive", root_path  %>
+    <div class="extras_container btn-group">
+        <%= button_to "Edit", edit_university_path(id: university.id), method: :get, class: "btn btn-primary" %>
+        <%= button_to "Archive", root_path, class: "btn btn-warning" %>
+        <%= button_to "Delete", university, class: "btn btn-danger",  method: :delete, data: {confirm: "Are you sure you want to delete this university?"}, remote: true  %>
     </div>
     <br>
 

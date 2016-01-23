@@ -19,10 +19,10 @@ class UniversitiesController < ApplicationController
         @university.website = params[:university][:website]
         @university.info = params[:university][:info]
         @university.department_ids = params[:university][:department_ids]
-        @university.from_date = params[:university][:from_date]
-        @university.to_date = params[:university][:to_date]
-        params[:university][:from_date].inspect
-        params[:university][:to_date].inspect
+#        @university.from_date = params[:university][:from_date]
+#        @university.to_date = params[:university][:to_date]
+#        params[:university][:from_date].inspect
+#        params[:university][:to_date].inspect
 
         if @university.save
             flash[:success] = "Successfully created a new university"
@@ -34,6 +34,7 @@ class UniversitiesController < ApplicationController
 
     def edit
         @university = University.find(params[:id])
+        @durations = Duration.where("university_id=?", @university.id)
     end
 
     def update
