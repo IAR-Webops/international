@@ -40,6 +40,7 @@ class UniversitiesController < ApplicationController
     def update
         @university = University.find(params[:id])
 
+        @university.department_ids = params[:university][:department_ids]
         if @university.update!(university_params)
             flash[:success] = "Successfully updated the university information"
             redirect_to root_url
