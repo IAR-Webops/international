@@ -1,6 +1,10 @@
 class DurationsController < ApplicationController
 
     def new
+        respond_to do |format|
+            format.html {redirect_to @duration}
+            format.js
+        end
     end
 
     def create

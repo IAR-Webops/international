@@ -14,11 +14,17 @@
             <%= department.name.capitalize %>
         <% end %>
     </div>
+    <% if current_user.try(:admin?)%>
     <div class="extras_container btn-group">
         <%= button_to "Edit", edit_university_path(id: university.id), method: :get, class: "btn btn-primary" %>
-        <%= button_to "Archive", root_path, class: "btn btn-warning" %>
+        <% if university.archived %>
+        <%= button_to "UnArchive", unarchive_university_path(id: university.id), method: :get, remote: true, class: "btn btn-warning unarchive_button" %>
+        <% else %>
+        <%= button_to "Archive", archive_university_path(id: university.id), method: :get, remote: true, class: "btn btn-warning archive_button" %>
+    <% end %>
         <%= button_to "Delete", university, class: "btn btn-danger",  method: :delete, data: {confirm: "Are you sure you want to delete this university?"}, remote: true  %>
     </div>
+<% end %>
     <br>
 
 </div>

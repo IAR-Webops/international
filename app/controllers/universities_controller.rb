@@ -1,7 +1,7 @@
 class UniversitiesController < ApplicationController
 
     def index
-        @universities = University.all.reverse_order
+        @universities = University.where(archived: 'false').reverse_order
     end
 
     def show
@@ -45,6 +45,32 @@ class UniversitiesController < ApplicationController
             redirect_to root_url
         else
             render 'edit'
+        end
+    end
+
+    def archive
+        @university = University.find(params[:id])
+        if @university.update!(archived: 'true')
+            flash[:success] = "Successfully archived the university."
+            respond_to do |format|
+                format.html {redirect_to @university}
+                format.js
+            end
+        else
+            flash[:error] = "Sorry, there was something wrong with the archive process. Please try again later or call Dharani @9043814168. Have fun."
+        end
+    end
+
+    def unarchive
+        @university = University.find(params[:id])
+        if @university.update!(archived: 'false')
+            flash[:success] = "Successfully unarchived the university."
+            respond_to do |format|
+                format.html {redirect_to @university}
+                format.js
+            end
+        else
+            flash[:error] = "Sorry, there was something wrong with the unarchive process. Please try again later or call Dharani @9043814168. Have fun."
         end
     end
 
