@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="jquery-2.2.0.min.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#countries").hide();
+		$("#country_button").click(function(){
+	    	$("#countries").show();
+		});
+	});
+	</script>
+</head>
+<style type="text/css">
+.left{
+	margin-right: 10px;
+}
+.middle{
+	margin:10px;
+	border-right:1px solid #EEE;
+	border-left:1px solid #EEE;
+}
+.university{
+	border:1px solid #E0DADA; 
+	background-color: #F5F2F2;
+	border-radius: 5px;
+	padding:5px 10px;
+}
+.info{
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+</style>
+<body>
+
+<hr>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-2 left">
+			<div class="row">
+				<h4>Sort by:</h4>
+			</div>
+			<div class="row">
+				Duration:
+				<select class="form-control">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+			</div>
+			<br>
+			<div class="row">
+			<button id="country_button" class="btn btn-primary">Country</button>
+				<div id="countries" class="checkbox">
+				    <label>
+				      <input type="checkbox" id="con1" value="option1">
+					      Country 1
+				    </label>
+				    <br>
+				    <label>
+				      <input type="checkbox" id="con2" value="option2">
+					      Country 2
+				    </label>
+				    <br>
+				    <label>
+				      <input type="checkbox" id="con3" value="option3">
+					      Country 3
+				    </label>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				Department:
+				<div class="checkbox">
+				    <label>
+				      <input type="checkbox" id="dep1" value="option1">
+					      Department 1
+				    </label>
+				    <label>
+				      <input type="checkbox" id="dep2" value="option2">
+					      Department 2
+				    </label>
+				    <label>
+				      <input type="checkbox" id="dep3" value="option3">
+					      Department 3
+				    </label>
+				</div>
+			</div>
+			<br>
+			<div class="row pull-right">
+				<button class="btn btn-success">Reset</button>
+			</div>
+		</div>
+		<div class="col-md-7 middle">
+			<div class="university">
+				<h3>Name of the University</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<span><i>Country</i></span>
+					</div>
+					<div class="col-md-4 pull-right">
+						<a href="">Reference to website</a>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-12">
+						<h4><b>Duration:</b></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h4>Introduction:</h4>	
+					</div>
+					<div class="col-md-8 info">
+						<p>some gen info about the university</p>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-primary">View</button>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="university">
+				<h3>Name of the University</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<span><i>Country</i></span>
+					</div>
+					<div class="col-md-4 pull-right">
+						<a href="">Reference to website</a>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-12">
+						<h4><b>Duration:</b></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h4>Introduction:</h4>	
+					</div>
+					<div class="col-md-8 info">
+						<p>some gen info about the university</p>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-primary">View</button>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="university">
+				<h3>Name of the University</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<span><i>Country</i></span>
+					</div>
+					<div class="col-md-4 pull-right">
+						<a href="">Reference to website</a>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-12">
+						<h4><b>Duration:</b></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<h4>Introduction:</h4>	
+					</div>
+					<div class="col-md-8 info">
+						<p>some gen info about the university</p>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-primary">View</button>
+					</div>
+				</div>
+			</div>
+			<br>
+		</div>
+		<div class="col-md-3 right">
+
+		</div>
+	</div>
+</div>	
+
+
+</body>
+</html>

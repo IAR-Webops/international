@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Landing</title>
+  	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  </head>
+<body>
+<style type="text/css">
+.country{
+	width: 11%;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	color: white;
+	border-radius: 10px;
+	padding-top: 2.8em;
+	text-align: center;
+	height: 8em;
+	background-color: grey;	
+}
+.country:hover{
+	cursor:pointer;
+}
+.text{
+	font-weight: bold;
+	font-size: 25px;	
+}
+</style>
+
+<div class="container-fluid">
+	<div class="row" style="background-color:grey;height:15em">
+		<div class="col-md-12">
+			<div class="row text-center" style="margin-top:6em">
+				<div class="input-group col-md-4 col-md-offset-4">
+				  <input type="search" class="form-control" placeholder="Search" aria-describedby="search-icon">
+				  <span class="input-group-addon" id="search-icon"><i class="glyphicon glyphicon-search"></i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row text-center">
+					<h1>Countries</h1>
+				</div>
+				<div id="countries" class="row countries">
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<h1>Departments</h1>
+				</div>
+				<div class="row departments">
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row departments">
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+					<div class="col-md-1 country">
+						<div class="row center text">
+							yo
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var iDiv = document.getElementById('countries');
+
+for (var i = 0; i <=12; i++) {
+	var innerDiv = document.createElement('div');
+	innerDiv.className = 'country col-md-1';
+	iDiv.appendChild(innerDiv);
+
+	var textDiv = document.createElement('span');
+	textDiv.className = 'center text';
+	innerDiv.appendChild(textDiv);
+
+};
+
+</script>
+
+</body>
+
+</html>
