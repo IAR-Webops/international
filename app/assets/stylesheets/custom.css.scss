@@ -1,6 +1,7 @@
 $primary-color: #3498db;
 $primary-dark-color: #2980b9;
 $white: #ecf0f1; 
+$black: rgb(0,0,0);
 $pale_bg_color: #F7F8FC;
 $side_button_color: #E9EEF4;
 $google_color: #4285f4;
@@ -357,15 +358,13 @@ div.btn-group form{
 }
 
 .country{
-	width: 11%;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	color: $white;
-	border-radius: 10px;
+	margin-right: 1%;
+	margin-bottom: 2%;
+	color: $black;
 	padding-top: 2.8em;
 	text-align: center;
 	height: 8em;
-	background-color: $primary_color;	
+        background-size: cover;
 }
 
 .country:hover{
@@ -379,4 +378,12 @@ div.btn-group form{
 
 .landing_carousel{
 	background-color: $primary_color;
+}
+
+#countries{
+    margin-left: 10%;
+}
+
+.transparency{
+    opacity: 0.5;
 }

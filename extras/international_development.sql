@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `countries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `GeoTag` text COLLATE utf8_unicode_ci NOT NULL,
+  `geocode` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -39,9 +39,9 @@ CREATE TABLE IF NOT EXISTS `countries` (
 -- Dumping data for table `countries`
 --
 
-INSERT INTO `countries` (`id`, `name`, `GeoTag`, `created_at`, `updated_at`) VALUES
-(1, 'Australia', 'AU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Austria', 'AT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+INSERT INTO `countries` (`id`, `name`, `geocode`, `created_at`, `updated_at`) VALUES
+(2, 'Australia', 'AU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Austria', 'AT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (4, 'Belgium', 'BE', '2016-02-04 17:00:43', '2016-02-04 17:00:43'),
 (5, 'China', 'CN', '2016-02-04 17:00:43', '2016-02-04 17:00:43'),
 (6, 'czech_republic', 'CZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -85,7 +85,7 @@ INSERT INTO `countries` (`id`, `name`, `GeoTag`, `created_at`, `updated_at`) VAL
 
 CREATE TABLE IF NOT EXISTS `departments` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `deptname` text,
+  `name` text,
   `created_at` datetime NOT NULL,
   `Updated_at` datetime NOT NULL,
   UNIQUE KEY `id` (`id`)
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `departments` (
 -- Dumping data for table `departments`
 --
 
-INSERT INTO `departments` (`id`, `deptname`, `created_at`, `Updated_at`) VALUES
+INSERT INTO `departments` (`id`, `name`, `created_at`, `Updated_at`) VALUES
 (1, 'Arts', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (2, 'Applied mathematics & computer science', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'Aerospace', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -318,17 +318,6 @@ CREATE TABLE IF NOT EXISTS `schema_migrations` (
 --
 -- Dumping data for table `schema_migrations`
 --
-
-INSERT INTO `schema_migrations` (`version`) VALUES
-('20151003184649'),
-('20151003184927'),
-('20151013172045'),
-('20151013191512'),
-('20151013210839'),
-('20151221132619'),
-('20160123131640'),
-('20160124173747');
-
 -- --------------------------------------------------------
 
 --

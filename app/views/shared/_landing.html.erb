@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
+		<div class="row countries_container">
 			<div class="col-md-12">
 				<div class="row text-center">
 					<h1>Countries</h1>
@@ -18,13 +18,14 @@
 				<div id="countries" class="row countries">
 <% @countries = Country.all %>
 <% @countries.each do |country| %>
-					<div class="col-md-1 country">
-						<div class="row center text">
+    <div class="col-md-2 country" style='background-image: url(http://www.geonames.org/flags/x/<%= country.geocode.downcase %>.gif)'>
+                                            <div class="row center text transparency">
 							<%= country.name %>
 						</div>
 					</div>
 <% end %>
 				</div>
+                                <% if false %> 
 				<div class="row text-center">
 					<h1>Departments</h1>
 				</div>
@@ -38,6 +39,7 @@
 					</div>
 <% end %>
 				</div>
+                            <% end %>
 			</div>
 		</div>
 	</div>
