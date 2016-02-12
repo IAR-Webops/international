@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var iDiv = document.getElementById('countries');
+
+for (var i = 0; i <=12; i++) {
+	var innerDiv = document.createElement('div');
+	innerDiv.className = 'country col-md-1';
+	iDiv.appendChild(innerDiv);
+
+	var textDiv = document.createElement('span');
+	textDiv.className = 'center text';
+	innerDiv.appendChild(textDiv);
+
+};

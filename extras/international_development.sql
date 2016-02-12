@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `internal_development`
+-- Database: `international_development`
 --
 
 -- --------------------------------------------------------
@@ -334,7 +334,7 @@ INSERT INTO `schema_migrations` (`version`) VALUES
 -- Table structure for table `university`
 --
 
-CREATE TABLE IF NOT EXISTS `university` (
+CREATE TABLE IF NOT EXISTS `universities` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `country_id` int(11) DEFAULT NULL,
@@ -349,10 +349,10 @@ CREATE TABLE IF NOT EXISTS `university` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=158 ;
 
 --
--- Dumping data for table `university`
+-- Dumping data for table `universities`
 --
 
-INSERT INTO `university` (`id`, `name`, `country_id`, `branches`, `website`, `info`, `created_at`, `updated_at`, `archived`) VALUES
+INSERT INTO `universities` (`id`, `name`, `country_id`, `branches`, `website`, `info`, `created_at`, `updated_at`, `archived`) VALUES
 (1, 'Curtin University', 1, 'Civil,Mechanical,Chemical&Petroleum,Electrical,Computing,Humanities', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 (2, 'Deakin University', 1, 'Civil,Electrical&Electronics,Mechanical,Mechatronics,Humanities', 'http://www.deakin.edu.au/study-at-deakin/international-students/apply/stEngineering physics-1-find-a-course', 'Orientation & Enrolment : 2nd-22 - 26 June 2015;3rd-19 - 23 October 2015', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 (3, 'Queensland University of Technology (QUT)', 1, '', '', 'English language proficiency requirements', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
