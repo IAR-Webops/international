@@ -4,10 +4,12 @@
 
 <%= render 'shared/landing' %>
 
-<%= render 'shared/sidebar' %>
+<div class="text-center row university_list_title">
+    <span style="vertical-align:center;"><b class="navbar-brand">Universities</b></span>
+</div>
 
 <div class="university_list">
     <% @universities.each do |university| %>
         <%= render university %>
-<% end %>
+    <% end %>
 </div>

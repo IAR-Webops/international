@@ -75,6 +75,7 @@ class UniversitiesController < ApplicationController
         end
     end
 
+
     private
 
     def university_params

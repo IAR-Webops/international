@@ -1,46 +1,50 @@
-<div class="container-fluid">
-	<div class="row landing_carousel" style="height:15em">
-		<div class="col-md-12">
-			<div class="row text-center" style="margin-top:6em">
-				<div class="input-group col-md-4 col-md-offset-4">
-				  <input type="search" class="form-control" placeholder="Search" aria-describedby="search-icon">
-				  <span class="input-group-addon" id="search-icon"><i class="glyphicon glyphicon-search"></i></span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row countries_container">
-			<div class="col-md-12">
-				<div class="row text-center">
-					<h1>Countries</h1>
-				</div>
-				<div id="countries" class="row countries">
-<% @countries = Country.all %>
-<% @countries.each do |country| %>
-    <div class="col-md-2 country" style='background-image: url(http://www.geonames.org/flags/x/<%= country.geocode.downcase %>.gif)'>
-                                            <div class="row center text transparency">
-							<%= country.name %>
-						</div>
-					</div>
-<% end %>
-				</div>
-                                <% if false %> 
-				<div class="row text-center">
-					<h1>Departments</h1>
-				</div>
-				<div class="row departments">
-<% @depts = Department.all %>
-<% @depts.each do |dept|%>
-					<div class="col-md-1 country">
-						<div class="row center text">
-							<%= dept.name %>
-						</div>
-					</div>
-<% end %>
-				</div>
+<div class="container-fluid landing_div">
+    <div class="row landing_carousel" style="height:20em">
+        <div class="col-md-12">
+            <div class="row text-center" style="margin-top:6em">
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <input type="search" class="form-control" placeholder="Search" aria-describedby="search-icon">
+                    <span class="input-group-addon" id="search-icon"><i class="glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container country_filter_div">
+        <div class="row countries_container">
+            <div class="col-md-12">
+                <div class="row text-center country_title_div">
+                    <span style='vertical-align:center;'><b class='navbar-brand'>Countries</b></span>
+                </div>
+                <div id="countries" class="row countries">
+                    <% @countries = Country.all %>
+                    <% @countries.each do |country| %>
+                            <%= link_to(universities_country_path(id: country.id)) do %>
+                        <div class="col-md-2 country transparency" style='background-image: url(http://www.geonames.org/flags/x/<%= country.geocode.downcase %>.gif)'>
+                                <div class="row center text country_div">
+                                    <p class="country_name"><%= country.name %></p>
+                                </div>
+                        </div>
                             <% end %>
-			</div>
-		</div>
-	</div>
+                    <% end %>
+                </div>
+
+                <% if false %> 
+                    <div class="row text-center">
+                        <h1>Departments</h1>
+                    </div>
+                    <div class="row departments">
+                        <% @depts = Department.all %>
+                        <% @depts.each do |dept|%>
+                            <div class="col-md-1 country">
+                                <div class="row center text">
+                                    <%= dept.name %>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
 </div>
