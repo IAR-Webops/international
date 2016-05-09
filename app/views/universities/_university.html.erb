@@ -1,30 +1,35 @@
 <div class="university_div <%=university.id%>"> 
 
-    <div class="university_name">
-        <%= link_to university.name.capitalize, university_path(id: university.id) %>
-    </div>
+<div class="university_name">
+<%= link_to university.name.capitalize, university_path(id: university.id) %>
+</div>
 
-    <div class="university_info">
-        <%= raw university.info %>
-    </div>
-    <br>
+<div>
+Country : <%= Country.find(university.country_id).name %>
+</div>
 
-    <div class="departments_container">Departments:<% @departments = University.includes(:departments).find(university.id).departments %>
-        <% @departments.each do |department| %>
-            <%= department.name.capitalize %>
-        <% end %>
-    </div>
-    <% if current_user.try(:admin?)%>
-    <div class="extras_container btn-group">
-        <%= button_to "Edit", edit_university_path(id: university.id), method: :get, class: "btn btn-primary" %>
-        <% if university.archived %>
-        <%= button_to "UnArchive", unarchive_university_path(id: university.id), method: :get, remote: true, class: "btn btn-warning unarchive_button" %>
-        <% else %>
-        <%= button_to "Archive", archive_university_path(id: university.id), method: :get, remote: true, class: "btn btn-warning archive_button" %>
-    <% end %>
-        <%= button_to "Delete", university, class: "btn btn-danger",  method: :delete, data: {confirm: "Are you sure you want to delete this university?"}, remote: true  %>
-    </div>
+<div class="university_info">
+Description: </br>
+<%= raw university.info %>
+</div>
+<br>
+
+<div class="departments_container">Departments:<% @departments = University.includes(:departments).find(university.id).departments %>
+<% @departments.each do |department| %>
+<%= department.name.capitalize %>
 <% end %>
-    <br>
+</div>
+<% if current_user.try(:admin?)%>
+<div class="extras_container btn-group">
+<%= button_to "Edit", edit_university_path(id: university.id), method: :get, class: "btn btn-primary" %>
+<% if university.archived %>
+<%= button_to "UnArchive", unarchive_university_path(id: university.id), method: :get, remote: true, class: "btn btn-warning unarchive_button" %>
+<% else %>
+<%= button_to "Archive", archive_university_path(id: university.id), method: :get, remote: true, class: "btn btn-warning archive_button" %>
+<% end %>
+<%= button_to "Delete", university, class: "btn btn-danger",  method: :delete, data: {confirm: "Are you sure you want to delete this university?"}, remote: true  %>
+</div>
+<% end %>
+<br>
 
 </div>
