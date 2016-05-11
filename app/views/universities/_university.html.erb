@@ -5,18 +5,18 @@
 </div>
 
 <div>
-Country : <%= Country.find(university.country_id).name %>
+<%= Country.find(university.country_id).name %>
 </div>
+<br>
 
 <div class="university_info">
-Description: </br>
 <%= raw university.info %>
 </div>
 <br>
 
-<div class="departments_container">Departments:<% @departments = University.includes(:departments).find(university.id).departments %>
+<div class="departments_container"><% @departments = University.includes(:departments).find(university.id).departments %>
 <% @departments.each do |department| %>
-<%= department.name.capitalize %>
+<%= link_to department.name.capitalize, department_path(id: department.id) %>
 <% end %>
 </div>
 <% if current_user.try(:admin?)%>

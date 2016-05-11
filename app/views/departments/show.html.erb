@@ -1,0 +1,9 @@
+<% content_for :title do%>
+    <%= @department.name %>
+<% end %>
+
+<% @universities.each do |university| %>
+    <%= render university %>
+    <div class="margin_div">
+    </div>
+<% end %>

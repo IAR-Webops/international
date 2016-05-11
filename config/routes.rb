@@ -19,11 +19,17 @@ Rails.application.routes.draw do
         resources :durations, only: [:new, :create, :destroy]
     end
 
+    match '/search', to: 'universities#search', via: 'get'
+    match '/downloads', to: 'static_pages#downloads', via: 'get'
+    match '/faq', to: 'static_pages#faq', via: 'get'
+
     resources :countries do
         member do
             get 'universities'
         end
     end
+
+    resources :departments, only: [:show]
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 

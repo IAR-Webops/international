@@ -75,6 +75,15 @@ class UniversitiesController < ApplicationController
         end
     end
 
+    def search
+        @universities = []
+        @univ_name = University.search(params[:search], 'name')
+        @universities = @universities + @univ_name
+
+        @univ_desc = University.search(params[:search], 'info')
+        @universities = @universities + @univ_desc
+    end
+
 
     private
 

@@ -1,0 +1,9 @@
+<% content_for :title do%>
+    Search Page
+<% end %>
+
+<% @universities.each do |university| %>
+    <%= render university %>
+    <div class="margin_div">
+    </div>
+<% end %>
